@@ -9,9 +9,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <style>
-        div{
+        /* div{
             border: 2px solid red;
+        } */
+        body{
+            background-color:#BDE0FE;
         }
+    .center {
+                margin: auto;
+                width: 60%;
+                border: 3px solid #73AD21;
+                padding: 10px;
+            }
         h3 {
                 font-family: 'Tangerine', serif;
                 font-size: 58px;
@@ -23,8 +32,8 @@
 </head>
 <body>
         <div class="container-fluid">
-                <div class="row gx-5 gy-5">
-                    <div class="col-6">
+                <div class="row gx-3 gy-5">
+                    <div class="col-5">
                     
                         @if ($errors->any())
                             @foreach ( $errors->all() as $error)
@@ -47,7 +56,7 @@
                                         <label for="file">Any file attachment
                                             <input type="file" name="file" class="form-control">
                                         </label>
-                                        
+                                    
                                     </div>
                                     <p style="font-size:24px;">Paste your content above <i class="fa fa-exclamation" style="font-size:24px;color:blue"></i></p>
                                 <button type="submit" class="btn btn-primary" >Submit</button>
@@ -55,10 +64,10 @@
                             
                     </div>
 
-                    <div class="col-6">
+                    <div class="col-4 mx-3">
                            
                            <div class="row gx-5 gy-5">
-                            <div class="col-6">
+                            <div class="col-12">
                                     <h3>Retrieve Content</h3> 
                                     @if (Session::has('result'))
                                        @if (session('result')['content'])
