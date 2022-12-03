@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Tangerine">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
@@ -15,12 +17,6 @@
         body{
             background-color:#BDE0FE;
         }
-    .center {
-                margin: auto;
-                width: 60%;
-                border: 3px solid #73AD21;
-                padding: 10px;
-            }
         h3 {
                 font-family: 'Tangerine', serif;
                 font-size: 58px;
@@ -31,7 +27,8 @@
     </style>
 </head>
 <body>
-        <div class="container-fluid">
+    <h3 class="animate__animated animate__flip animate__delay-2s gy-5" style="text-align: center;"><strong>CLIPBOARD</strong></h3>
+        <div class="container-fluid gy-5">
                 <div class="row gx-3 gy-5">
                     <div class="col-5">
                     
@@ -67,7 +64,7 @@
                     <div class="col-4 mx-3">
                            
                            <div class="row gx-5 gy-5">
-                            <div class="col-12">
+                            <div class="col-12 " style="justify-content: center;">
                                     <h3>Retrieve Content</h3> 
                                     @if (Session::has('result'))
                                        @if (session('result')['content'])
@@ -98,6 +95,12 @@
        
                             </div>
                     </div>
+                </div>
+                <div class="row">
+                        <div class="col py-5">
+                            <p class="py-5" style="font-size:35px;text-align:center;">Copy and share any information with just a code<i class="fas fa-smile-wink animate__animated animate__bounceInUp animate__delay-2s gy-5" style="font-size:35px;text-align:center;color:blue;"></i></p>
+                            
+                        </div>
                 </div>
         </div>
 
