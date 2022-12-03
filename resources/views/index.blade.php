@@ -98,7 +98,7 @@
                 </div>
                 <div class="row">
                         <div class="col py-5">
-                            <p class="py-5" style="font-size:35px;text-align:center;">Copy and share any information with just a code<i class="fas fa-smile-wink animate__animated animate__bounceInUp animate__delay-2s gy-5" style="font-size:35px;text-align:center;color:blue;"></i></p>
+                            <p class="py-5" style="font-size:35px;text-align:center;">Copy and share any information with just a c<i class="fas fa-smile-wink animate__animated animate__bounceInUp animate__delay-2s gy-5" style="font-size:35px;text-align:center;color:blue;"></i>de</p>
                             
                         </div>
                 </div>
