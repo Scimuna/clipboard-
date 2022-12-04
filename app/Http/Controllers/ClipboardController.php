@@ -28,7 +28,9 @@ class ClipboardController extends Controller
 
         if ($validated) {
             $request->hasFile('file') ? $uploadedFileUrl = $request->file('file')->storeOnCloudinary() : $uploadedFileUrl = "no image";
-            $uploadedFileUrl = Cloudinary::getUrl($uploadedFileUrl->getPublicId());
+            if ($uploadedFileUrl != "no image") {
+                $uploadedFileUrl = Cloudinary::getUrl($uploadedFileUrl->getPublicId());
+            }
             DB::beginTransaction();
             $code = uniqid();
             $content = new  Content();
