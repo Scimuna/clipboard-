@@ -21,26 +21,31 @@ class ClipboardController extends Controller
 
     public function submitcontent(Request $request)
     {
-        $validated = $request->validate([
-            "content" => '',
-            "file" => "mimes:png,jpg,pptx,doc,docx,pdf,xls, jpeg,bmp, gif,webp|max:3048"
-        ]);
-
-        if ($validated) {
-            $request->hasFile('file') ? $uploadedFileUrl = $request->file('file')->storeOnCloudinary() : $uploadedFileUrl = "no image";
-            if ($uploadedFileUrl != "no image") {
-                $uploadedFileUrl = Cloudinary::getUrl($uploadedFileUrl->getPublicId());
+        try {
+            $validated = $request->validate([
+                "content" => '',
+                "file" => "mimes:png,jpg,pptx,doc,docx,pdf,xls, jpeg,bmp, gif,webp|max:3048"
+            ]);
+            if ($request->content == '' && $request->file == '') {
+                return redirect()->route('index');
             }
-            DB::beginTransaction();
-            $code = uniqid();
-            $content = new  Content();
-            $content->content = $request->content;
-            $content->file_url = $uploadedFileUrl;
-            $content->code = $code;
-            $content->save();
-            DB::commit();
-            Session::flash('message', "Your content has been captured successfully! Kindly give the retriever this code $code to access your content");
-            return redirect()->route('index');
+            if ($validated) {
+                $request->hasFile('file') ? $uploadedFileUrl = $request->file('file')->storeOnCloudinary() : $uploadedFileUrl = "no image";
+                if ($uploadedFileUrl != "no image") {
+                    $uploadedFileUrl = Cloudinary::getUrl($uploadedFileUrl->getPublicId());
+                }
+                DB::beginTransaction();
+                $code = uniqid();
+                $content = new  Content();
+                $content->content = $request->content;
+                $content->file_url = $uploadedFileUrl;
+                $content->code = $code;
+                $content->save();
+                DB::commit();
+                Session::flash('message', "Your content has been captured successfully! Kindly give the retriever this code $code to access your content");
+                return redirect()->route('index');
+            }
+        } catch (\Exception $e) {
         }
     }
 
