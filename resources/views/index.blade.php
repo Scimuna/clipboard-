@@ -30,7 +30,7 @@
     <h3 class="animate__animated animate__flip animate__delay-2s gy-5" style="text-align: center;"><strong>CLIPBOARD</strong></h3>
         <div class="container-fluid gy-5">
                 <div class="row gx-3 gy-5">
-                    <div class="col-5">
+                    <div class="col-md-5">
                     
                         @if ($errors->any())
                             @foreach ( $errors->all() as $error)
@@ -61,7 +61,7 @@
                             
                     </div>
 
-                    <div class="col-4 mx-3">
+                    <div class="col-md-4 mx-3">
                            
                            <div class="row gx-5 gy-5">
                             <div class="col-12 " style="justify-content: center;">
